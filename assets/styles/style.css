@@ -1,0 +1,238 @@
+/* reset rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+}
+
+
+body {
+    background-color: #D9E5F3;
+    font-family: 'DM Sans', Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #134077;
+    line-height: 31.84px;
+}
+
+
+.h-container {
+    padding: 35px 35px;
+}
+
+
+/* main */
+.container {
+    padding: 100px 0;
+}
+
+/*buttons*/
+button {
+    background-color: #0057FF;
+    width: 100%;
+    height: 59px;
+    padding: 15px;
+    color: white;
+    border-radius: 11px;
+    border: 1px solid #0057FF;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+}
+button:hover {
+    /**/
+}
+
+
+/* form login and register */
+.form-container {
+    max-width: 600px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #134077;
+    margin: 20px auto;
+    padding: 40px;
+}
+label {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 12.94px;
+}
+input {
+    width: 100%;
+    padding: 7px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19.9px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #2D224C;
+}
+input:focus-visible {
+    outline: none;
+    border-bottom: 1px solid #0057FF;
+}
+::placeholder {
+    color: #cccccc;
+}
+.form-text {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 13px;
+}
+.password-container{
+    width: 100%;
+    position: relative;
+}
+.fa-eye, .fa-eye-slash {
+    position: absolute;
+    top: 44px;
+    right: 10px;
+    cursor: pointer;
+    color: #0057FF;
+}
+.fa-eye-slash {
+    right: 9px;
+}
+
+
+
+/* Rectangle 1 */
+
+.rectangle-1{
+    box-sizing: border-box;
+    display: flex;
+
+    width: 100%;
+    height: 148px;
+    left: 0px;
+    top: -36px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 18px -6px #0057FF;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+
+
+/*logo*/
+.logo{
+    width: 123.14px;
+    height: 52.27px;
+    margin-left: 51px;
+    align-self: center;
+}
+
+/*background*/
+/*bg waves*/
+.vector-1{
+    position: absolute;
+    width: 100%;
+    z-index: -2;
+    height: 100%;
+    bottom: -400px;
+    background-image: linear-gradient(to top, white 48%, transparent 45%);
+}
+.vector-4{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom:-300px;
+    z-index: -3;
+    background-color: transparent;
+
+}
+.vector-5{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    z-index: -4;
+    bottom:-300px;
+
+}
+
+/* Ellipse 12 */
+.ellipse-12{
+    position: absolute;
+    width: 181px;
+    height: 181px;
+    left: 1426px;
+    top: 444px;
+    border-radius: 100%;
+    z-index: -2;
+    background: #FFFFFF;
+}
+/* Ellipse 13 */
+.ellipse-13{
+    position: absolute;
+    width: 358px;
+    height: 358px;
+    left: -178px;
+    top: 318px;
+    border-radius: 100%;
+    z-index: -2;
+    background: #FFFFFF;
+
+}
+
+
+/*rocket*/
+.rocket{
+    position: absolute;
+    height: 180px;
+    width: 80px;
+    left: 1175px;
+    top: 68%;
+}
+.rocket-tip {
+    position: absolute;
+    width: 73px;
+    height: 84px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /*left: 1175px;
+    top: 787px;*/
+
+}
+.rocket-body{
+    position: absolute;
+    width: 63px;
+    height: 96px;
+    left: 0;
+    right: 0;
+    top: 76px;
+    margin: 0 auto;
+    /*left: 1180px;
+    top: 850px;*/
+
+    background: #FFFFFF;
+}
+.rocket-hole{
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*left: 1197px;
+    top: 875px;*/
+    border-radius: 100%;
+
+    background: #D9E5F3;
+}
