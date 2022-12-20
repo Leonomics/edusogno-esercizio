@@ -193,13 +193,13 @@ input:focus-visible {
 .rocket{
     position: absolute;
     height: 180px;
-    width: 80px;
+    width: 150px;
     left: 1175px;
     top: 68%;
 }
 .rocket-tip {
     position: absolute;
-    width: 73px;
+    width: 63px;
     height: 84px;
     left: 0;
     right: 0;
@@ -214,7 +214,7 @@ input:focus-visible {
     height: 96px;
     left: 0;
     right: 0;
-    top: 76px;
+    top: 72px;
     margin: 0 auto;
     /*left: 1180px;
     top: 850px;*/
@@ -227,14 +227,43 @@ input:focus-visible {
     height: 29px;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
+    top: 100px;
     margin: auto;
     /*left: 1197px;
     top: 875px;*/
     border-radius: 100%;
 
     background: #D9E5F3;
+}
+.rocket-left-wing{
+    position: absolute;
+    width: 20px;
+    height: 58px;
+    left: 16px;
+    bottom: -16px;
+
+    background: transparent;
+}
+
+.rocket-right-wing{
+    position: absolute;
+    width: 20px;
+    height: 58px;
+    right: 16px;
+    bottom: -16px;
+
+    background: transparent;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.rocket-central-wing{
+    position: absolute;
+    width: 5px;
+    height: 56px;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #FFFFFF;
 }
 
 

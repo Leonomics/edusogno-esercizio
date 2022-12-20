@@ -123,6 +123,15 @@ $min = min(count($event_names_single), count($event_dates_single));
             <div class="rocket-hole">
 
             </div>
+            <div class="rocket-left-wing">
+                <img src="./assets/images/vector-2.svg">
+            </div>
+            <div class="rocket-right-wing">
+                <img src="./assets/images/vector-2.svg">
+            </div>
+            <div class="rocket-central-wing">
+
+            </div>
         </div>
     </main>
 
