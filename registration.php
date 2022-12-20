@@ -1,74 +1,70 @@
 <?php
-    session_start();
-    require_once __DIR__ . '/connection.php';
+require_once __DIR__ . '/connection.php';
+$message = "";
 
-    $message = "";
+if(isset($_POST['register-button'])){
+    $nome = $connect->real_escape_string($_POST['nome']);
+    $cognome = $connect->real_escape_string($_POST['cognome']);
+    $email = $connect->real_escape_string($_POST['email']);
+    $password = $connect->real_escape_string($_POST['password']);
+    $password = md5($password);
 
-    if(isset($_POST['login-button'])){
+    $sql = "INSERT INTO utenti (nome, cognome, email, password) VALUES ('$nome', '$cognome', '$email', '$password')";
 
-        $email = $connect->real_escape_string($_POST['email']);
-        $password = $connect -> real_escape_string(md5($_POST['password']));
-
-
-        if ($email != "" && $password != ""){
-
-            //registered email
-            $sql_email = "SELECT count(*) AS email FROM utenti WHERE email='".$email."'";
-            $result_email = mysqli_query($connect, $sql_email);
-            $row_email = mysqli_fetch_array($result_email);
-
-            $count_email = $row_email['email'];
-
-            if($count_email > 0){
-                // registered password
-                $sql_password = "SELECT count(*) AS email FROM utenti WHERE email='".$email."' AND password='".$password."'";
-                $result_password = mysqli_query($connect, $sql_password);
-                $row_password = mysqli_fetch_array($result_password);
-
-                $count_password = $row_password['email'];
-                // access
-                if($count_password > 0){
-                    //session variables
-                    $_SESSION['email'] = $email;
-                    header('Location: events.php');
-                }else{
-                    $message = "<div class='message-error'>Password errata</div>";
-                }
-            }else{
-                $message = "<div class='message-error'>Email errata</div>";
-            }
-        }else{
-            $message = "<div class='message-error'>Inserisci Email e Password</div>";
-        }
+    if($connect->query($sql) === true) {
+        $message =
+            "<div class='message-success'>Dati salvati correttamente<br>Clicca <a href='index.php'>QUI</a> per accedere alla tua area riservata</div>
+            <div class=''></div>
+            "
+        ;
+    } else{
+        $message = "<div class='message-error'>Errore durante l'inserimento: . $connect->error</div>";
     }
+
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edusogno</title>
+    <title>Registrazione - Edusogno</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-</head>
 
+</head>
 <body>
+    <!-- HEADER -->
     <header class="rectangle-1">
         <img class="logo" src="./assets/images/logo.svg">
     </header>
 
+    <!-- MAIN -->
     <main>
         <section>
             <div class="container">
                 <h1>
-                    Hai già un account?
+                    Crea il tuo account
                 </h1>
+                <!-- form -->
                 <div class="form-container">
 
-                    <form action="" method="POST">
+                    <?php echo $message; ?>
+
+                    <form action="" method="post">
+                        <div>
+                            <label for="nome">Inserisci il nome</label>
+                            <input type="text" name="nome" id="nome" placeholder="Mario" required>
+                        </div>
+
+                        <div>
+                            <label for="cognome">Inserisci il cognome</label>
+                            <input type="text" name="cognome" id="cognome" placeholder="Rossi" required>
+                        </div>
+
                         <div>
                             <label for="email">Inserisci l'e-mail</label>
                             <input type="email" name="email" id="email" placeholder="name@example.com" required>
@@ -81,21 +77,26 @@
                         </div>
 
                         <div>
-                            <button type="submit" name="login-button">ACCEDI</button>
+                            <button type="submit"  name="register-button">REGISTRATI</button>
                         </div>
+
+                        <?php
+
+
+
+                        $connect->close();
+                        ?>
 
                         <div class="form-text">
-                            Non hai ancora un profilo? <a href="./registration.php">Registrati</a>
+                            Hai già un account? <a href="index.php">Accedi</a>
                         </div>
 
-
-
                     </form>
-
                 </div>
 
             </div>
         </section>
+
         <div class="vector-4">
             <img src="./assets/images/vector-4.svg" alt="">
         </div>
@@ -123,11 +124,8 @@
             </div>
         </div>
 
-
     </main>
 
     <script type="text/javascript" src="assets/js/script.js"></script>
-
 </body>
-
 </html>

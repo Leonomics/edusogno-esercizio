@@ -236,3 +236,45 @@ input:focus-visible {
 
     background: #D9E5F3;
 }
+
+
+/*messages*/
+.message-error, .message-success {
+    color: white;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.message-error {
+    background-color: red;
+}
+.message-success {
+    background-color: green;
+}
+
+
+/*events*/
+.event-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.event-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.event-card {
+    width: calc(100% / 3);
+    padding: 25px;
+}
+.event {
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid;
+    padding: 20px;
+}
+.event-time {
+    color: #cccccc;
+    padding: 10px 0;
+}
