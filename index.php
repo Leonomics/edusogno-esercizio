@@ -85,6 +85,9 @@
                         </div>
 
                         <div class="form-text">
+                            <a href="./password-reset.php">Hai dimenticato la password?</a>
+                        </div>
+                        <div class="form-text">
                             Non hai ancora un profilo? <a href="./registration.php">Registrati</a>
                         </div>
 
