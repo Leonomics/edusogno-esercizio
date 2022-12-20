@@ -121,6 +121,15 @@
             <div class="rocket-hole">
 
             </div>
+            <div class="rocket-left-wing">
+                <img src="./assets/images/vector-2.svg">
+            </div>
+            <div class="rocket-right-wing">
+                <img src="./assets/images/vector-2.svg">
+            </div>
+            <div class="rocket-central-wing">
+
+            </div>
         </div>
 
 
